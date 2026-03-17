@@ -1,0 +1,31 @@
+<style>
+@media (min-width: 768px) {
+    #header {
+        background: rgba(255, 255, 255, 0.55) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .header-top, .header-bottom,
+    .header-top-wrapper, .header-bottom-wrapper,
+    .navigation-wrapper, .navigation-in {
+        background: transparent !important;
+    }
+
+    .menu-level-1 > li > a {
+        font-family: 'Jost', sans-serif !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.18em !important;
+        text-transform: uppercase !important;
+        color: #2C1F1A !important;
+        padding: 8px 14px !important;
+        transition: color 0.2s ease !important;
+    }
+
+    .menu-level-1 > li > a:hover {
+        color: #C44952 !important;
+    }
+}
+</style>
