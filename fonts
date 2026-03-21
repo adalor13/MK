@@ -22,7 +22,27 @@ h1, h2, h3, h4, h5, h6,
 .homepage-group-title, .pageElement__heading, .benefitBanner__title, .welcome h1 {
   font-family: 'Jost', sans-serif !important;
   font-weight: 600 !important;
+	line-height: 1.3;
   letter-spacing: 0.03em;
+}
+h1 {
+  font-size: 36px;
+  letter-spacing: 0.5px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 22px;
+}
+h4 {
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 17px; }
 }
 
 /* NÁZVY PRODUKTŮ */
