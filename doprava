@@ -1,0 +1,249 @@
+/* MODERNÍ TABULKA DOPRAVY */
+
+.mk-shipping-table-wrap {
+  margin: 24px 0 32px;
+  overflow: hidden;
+  border: 1px solid #eadfe0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(74, 45, 48, 0.07);
+}
+
+.mk-shipping-table-wrap .mk-shipping-table {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  overflow: visible;
+  color: #2c1f1a;
+}
+
+.mk-shipping-table-wrap .mk-shipping-table th,
+.mk-shipping-table-wrap .mk-shipping-table td {
+  padding: 16px 14px;
+  border: 0;
+  border-bottom: 1px solid #eee5e6;
+  background: transparent;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 1.45;
+}
+
+.mk-shipping-table-wrap .mk-shipping-table th {
+  background: #f8e9ea;
+  color: #633d41;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.mk-shipping-table th:nth-child(1) { width: 21%; }
+.mk-shipping-table th:nth-child(2) { width: 10%; }
+.mk-shipping-table th:nth-child(3) { width: 20%; }
+.mk-shipping-table th:nth-child(4) { width: 17%; }
+.mk-shipping-table th:nth-child(5) { width: 14%; }
+.mk-shipping-table th:nth-child(6) { width: 18%; }
+
+.mk-shipping-table-wrap .mk-shipping-table tbody tr {
+  background: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.mk-shipping-table-wrap .mk-shipping-table tbody tr:hover {
+  background: #fffafa;
+}
+
+.mk-shipping-table-wrap .mk-shipping-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Doporučená doprava */
+
+.mk-shipping-table-wrap .mk-shipping-table tr.is-recommended {
+  background: #fff8f8;
+}
+
+.mk-shipping-table-wrap
+.mk-shipping-table tr.is-recommended td:first-child {
+  box-shadow: inset 4px 0 0 #c44952;
+}
+
+/* Název, cena a štítky */
+
+.mk-shipping-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.mk-shipping-price {
+  color: #c44952;
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.mk-shipping-badge,
+.mk-shipping-free {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mk-shipping-badge {
+  padding: 6px 8px;
+  background: #c44952;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.mk-shipping-free {
+  padding: 7px 9px;
+  background: #f8e9ea;
+  color: #823b43;
+  font-size: 12px;
+}
+
+.mk-shipping-not-available {
+  color: #766c6e;
+  font-size: 13px;
+}
+
+/* MOBILNÍ KARTY */
+
+@media screen and (max-width: 900px) {
+  .mk-shipping-table-wrap {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table,
+  .mk-shipping-table-wrap .mk-shipping-table tbody {
+    display: block;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table {
+    margin: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table thead {
+    display: none;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table tbody {
+    display: grid;
+    gap: 14px;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table tbody tr,
+  .mk-shipping-table-wrap .mk-shipping-table tbody tr.is-recommended {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 16px;
+    margin: 0;
+    padding: 17px 16px;
+    overflow: hidden;
+    border: 1px solid #eadfe0;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(74, 45, 48, 0.06);
+  }
+
+  .mk-shipping-table-wrap
+  .mk-shipping-table tbody tr.is-recommended {
+    border-color: #d9868c;
+    background: #fffafa;
+    box-shadow:
+      inset 4px 0 0 #c44952,
+      0 5px 18px rgba(74, 45, 48, 0.07);
+  }
+
+  .mk-shipping-table-wrap
+  .mk-shipping-table tr.is-recommended td:first-child {
+    box-shadow: none;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table td {
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    width: auto;
+    min-width: 0;
+    padding: 9px 0;
+    border: 0;
+    border-bottom: 1px solid #f1e9ea;
+    text-align: right;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table td::before {
+    content: attr(data-label);
+    flex: 0 0 39%;
+    color: #766c6e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table td:first-child {
+    display: block;
+    grid-column: 1;
+    padding: 0 0 14px;
+    border-bottom: 1px solid #eadfe0;
+    text-align: left;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table td:nth-child(2) {
+    display: block;
+    grid-column: 2;
+    padding: 0 0 14px;
+    border-bottom: 1px solid #eadfe0;
+    text-align: right;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table td:first-child::before,
+  .mk-shipping-table-wrap .mk-shipping-table td:nth-child(2)::before {
+    display: none;
+  }
+
+  .mk-shipping-table-wrap .mk-shipping-table td:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .mk-shipping-name {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mk-shipping-price {
+    font-size: 19px;
+  }
+
+  .mk-shipping-free {
+    margin-left: auto;
+  }
+}
